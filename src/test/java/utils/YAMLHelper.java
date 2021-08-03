@@ -11,8 +11,8 @@ public class YAMLHelper {
 
     public String getProperty(String property) throws IOException {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-        JsonNode jsonNode = mapper.readValue(new File("src/test/resources/configuration.yaml"), JsonNode.class);
-        JsonNode object = jsonNode.get(1);
+        JsonNode jsonNode = mapper.readValue(new File("src/test/resources/configuration.json"), JsonNode.class);
+        JsonNode object = jsonNode.get(0);
         return object.get(property).textValue();
     }
 }
